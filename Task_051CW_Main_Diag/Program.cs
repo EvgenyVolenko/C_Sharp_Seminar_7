@@ -16,7 +16,6 @@ int[,] matrix = new int [m, n];
 FillArray(matrix);
 PrintArray(matrix);
 Console.WriteLine();
-// int sumDiag = SumMainDiag(matrix);
 Console.WriteLine($"Сумма значений главной диагонали матрицы равна {SumMainDiag(matrix)}");
 
 int SumMainDiag (int[,] table)
