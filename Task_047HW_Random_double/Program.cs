@@ -19,7 +19,7 @@ double RandomForFill (int max, int min)
 {   
     Random rand = new Random();
     double digit = min + rand.NextDouble() * (max - min);
-    return Math.Round(digit, 1, MidpointRounding.AwayFromZero);    
+    return digit;    
 }
 
 void FillArray (double[,] mat, int st, int en)
@@ -39,7 +39,7 @@ void PrintArray(double[,] matr)
     {
         for (int j = 0; j < matr.GetLength(1); j++) // Переходим по столбцам
         {
-            Console.Write($"{matr[i, j]} | ");
+            Console.Write($"{matr[i, j]:f2} | "); // :f2 выводит на печать только 2 символа после запятой.
         }
         Console.WriteLine();
     }
