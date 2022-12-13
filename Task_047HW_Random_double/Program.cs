@@ -5,7 +5,7 @@
 // ​8 7,8 -7,1 9
 
 Console.Clear();
-const int m = 4;
+const int m = 3;
 const int n = 4;
 const int startRand = -10;
 const int endRand = 10;
@@ -39,7 +39,7 @@ void PrintArray(double[,] matr)
     {
         for (int j = 0; j < matr.GetLength(1); j++) // Переходим по столбцам
         {
-            Console.Write($"{matr[i, j]:f2} | "); // :f2 выводит на печать только 2 символа после запятой.
+            Console.Write($"{matr[i, j]:f1} | "); // :f2 выводит на печать только 2 символа после запятой.
         }
         Console.WriteLine();
     }
