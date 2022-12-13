@@ -7,12 +7,17 @@
 // ​1 7 -> такого числа в массиве нет
 
 Console.Clear();
-const int m = 3;
-const int n = 4;
+const int LEFTRANGE = -10;
+const int RIGHTRANGE = 10;
+
+Console.Write("Введите число строк в создаваемом массиве: ");
+int m = vvod();
+Console.Write("Введите число столбцов в создаваемом массиве: ");
+int n = vvod();
 
 int[,] matrix = new int [m, n];
 
-FillArray(matrix);
+FillArray(matrix, LEFTRANGE, RIGHTRANGE);
 PrintArray(matrix);
 
 Console.Write("Введите номер строки для поиска элемента: ");
@@ -46,14 +51,14 @@ int vvod()
     return digit;
 }
 
-void FillArray (int[,] mat)
+void FillArray (int[,] mat, int leftRange, int rightRange)
 {
     Random rand = new Random();
     for (int i = 0; i < mat.GetLength(0); i++) // Переходим по строкам
     {
         for (int j = 0; j < mat.GetLength(1); j++) // Переходим по столбцам
         {
-            mat[i, j] = rand.Next(-100, 101);
+            mat[i, j] = rand.Next(leftRange, rightRange + 1);
         }
     }
 }
